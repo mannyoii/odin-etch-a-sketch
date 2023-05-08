@@ -3,6 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: whitesmoke;
 }
 
 .header {
@@ -20,7 +21,7 @@ body {
   justify-content: space-between;
   width: 500px;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .container {
@@ -28,7 +29,7 @@ body {
   width: 400px;
   height: 400px;
   display: grid;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 
 .select {

@@ -6,9 +6,17 @@
 // for (let i = 0; i < 16; i++) {
 //   document.createElement("div");
 // }
+let color = "black";
 
 document.addEventListener("DOMContentLoaded", function () {
-  createBoard(36);
+  createBoard(16);
+  // getSize();
+
+  const popup = document.querySelector(".popup");
+  popup.addEventListener("click", function () {
+    let size = getSize();
+    createBoard(size);
+  });
 });
 
 function createBoard(size) {
@@ -19,7 +27,21 @@ function createBoard(size) {
   let numDivs = size * size;
   for (let i = 0; i < numDivs; i++) {
     let div = document.createElement("div");
-    div.style.backgroundColor = "yellow";
+    // div.style.backgroundColor = "blue";
+    div.addEventListener("mouseover", colorDiv);
     container.insertAdjacentElement("beforeend", div);
   }
+}
+
+function getSize() {
+  let input = prompt("What size would you like?");
+  let message = document.querySelector("#message");
+  if (input === "") {
+    message.textContent = "Please enter a number!";
+  } else if (input < 0 || input > 100) {
+    message.textContent = "Please enter a number between 1 and 100";
+  } else {
+    message.textContent = "Now you can play!";
+  }
+  return input;
 }
