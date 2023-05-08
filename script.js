@@ -45,3 +45,15 @@ function getSize() {
   }
   return input;
 }
+
+function colorDiv() {
+  // const black = document.querySelector(".black");
+  // black.addEventListener("click", function () {
+  // this.style.backgroundColor = "white";
+  // });
+  if (color === "random") {
+    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+  } else {
+    this.style.backgroundColor = "black";
+  }
+}
